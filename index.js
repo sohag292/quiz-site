@@ -59,7 +59,6 @@ const displayQuiz = (data) => {
   }
 
   data.forEach((quiz, i) => {
-    console.log(quiz);
     quizContainer.innerHTML += `<div class="m-3 py-3 px-4 shadow-sm rounded">
   <div class="flex items-center">
     <div class="h-8 w-8 bg-green-300 rounded-full flex justify-center items-center text-green-800 mr-3">
@@ -147,16 +146,15 @@ document.querySelector("#submit").addEventListener("click", () => {
     </h1>
     <p class="text-sm flex justify-center items-center gap-2">
       Total Time: <span class="text-xl text-orange-500">${timeTaken.innerText.replace(
-        "sec",
-        ""
-      )}<span class="text-xs">sec</span></span>
+      "sec",
+      ""
+    )}<span class="text-xs">sec</span></span>
     </p>
   </div>
   
   <button onclick="location.reload();" class="bg-green-600 text-white w-full py-2 rounded mt-16">Restart</button>
-  ${
-    storage
-      ? `<div class="mt-5">
+  ${storage
+        ? `<div class="mt-5">
       <h1 class="text-center">Previous Submissions <button class="text-blue-800 text-xs" onclick={localStorage.clear();location.reload()}>Clear History</button></h1>
     <div
     class="flex justify-between items-center border rounded p-2 my-2 shadow-sm font-medium">
@@ -165,18 +163,18 @@ document.querySelector("#submit").addEventListener("click", () => {
     <div>Time</div>
     </div>
     ${storage
-      ?.reverse()
-      ?.map(
-        (item) => `<div
+          ?.reverse()
+          ?.map(
+            (item) => `<div
       class="flex justify-between items-center border rounded p-2 my-2 shadow-sm">
       <div>${item.marks}/60</div>
       <div>${item.status}</div>
       <div>${item.examTime}</div>
       </div>`
-      )
-      ?.join("")}`
-      : ""
-  }
+          )
+          ?.join("")}`
+        : ""
+      }
   </div>
   `;
 
@@ -184,3 +182,9 @@ document.querySelector("#submit").addEventListener("click", () => {
   }, 1500);
   window.scrollTo(0, 0);
 });
+
+// blog page EventListener
+document.getElementById("btn-blog").addEventListener("click", function () {
+  window.location.href = "./blog.html";
+
+})

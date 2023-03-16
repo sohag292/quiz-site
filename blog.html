@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Blog page</title>
+  <style>
+    ::selection {
+      background: red;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            common: ["Rubik", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body>
+  <header class="h-16 flex items-center shadow-sm">
+    <nav class="flex justify-between items-center w-9/12 mx-auto">
+      <div class="text-zinc-800 font-bold uppercase">
+        <h1 class="text-lg">Quiz <span class="text-green-700">HERO</span></h1>
+        <p class="text-[10px] font-normal capitalize -mt-1">
+          Get ready to Quiz and be amazed!
+        </p>
+      </div>
+      <button id="back-btn" class="bg-green-600 font-light text-sm px-5 py-1 rounded text-white">
+        Back
+      </button>
+    </nav>
+  </header>
+  <div class="container mx-auto p-12 bg-zinc-200 rounded">
+    <h1 class="text-2xl font-bold">1. What is the differents between <span class="text-amber-500"> forEach, find, map, &
+        filter</span> in javascript?</h1>
+    <p class="text-xl">Ans: <span class="bg-green-300">map()</span> executes the same code on every element in an array
+      and returns a new array with the updated elements. <span class="bg-green-300">forEach()</span> is used to execute
+      the same code on every element in an array but does not change the array and it returns undefined. <span
+        class="bg-green-300">filter()</span> checks every element in an array to see if it meets a certain criteria and
+      returns a new array with the elements that return truthy for the criteria. <span
+        class="bg-green-300">find()</span> returns first element of the array that satisfies the condition specified in
+      the callback function.</p>
+    <h1 class="text-2xl font-bold">2. What is the differents between <span class="text-amber-500">localStorage,
+        sessionStorage & cookies</span>?</h1>
+    <p class="text-xl">Ans: <span class="bg-green-300">Local storage</span>
+      Local storage stores a larger amount of data on the client's computer in a key-value pair format and has no
+      expiration date. Data is never transferred to the server and is accessible via JavaScript and HTML5. Its Capacity:
+      10MB. <span class="bg-green-300">Session storage</span> stores a larger amount of data on the client's computer
+      only for the current session, expiring the data on tab close. Data is never transferred to the server and is
+      accessible client-side from the same tab. Its Capacity: 5MB. <span class="bg-green-300">Cookies</span> store small
+      amounts of data that has to be sent back to the server with subsequent requests and their expiration can be set
+      from either server or client. They are primarily used for server-side reading. Its Capacity: 4KB </p>
+    <h1 class="text-2xl font-bold">3. What is <span class="text-amber-500">Event Loop</span>?</h1>
+
+    <p class="text-xl">Ans:The <span class="bg-green-300">event loop</span> is the secret behind JavaScript’s
+      asynchronous programming. JS executes all operations on a single thread, but using a few smart data structures, it
+      gives us the illusion of multi-threading. The call stack is responsible for keeping track of all the operations in
+      line to be executed. Whenever a function is finished, it is popped from the stack.The event queue is responsible
+      for sending new functions to the stack for processing. It follows the queue data structure to maintain the correct
+      sequence in which all operations should be sent for execution. Whenever an async function is called, it is sent to
+      a browser API. These are APIs built into the browser. Based on the command received from the call stack, the API
+      starts its own single-threaded operation.An example of this is the setTimeout method. When a setTimeout operation
+      is processed in the stack, it is sent to the corresponding API which waits till the specified time to send this
+      operation back in for processing.</p>
+    <h1 class="text-2xl font-bold">4. How does the <span class="text-amber-500">quizTimer function</span> works?</h1>
+    <p class="text-xl">Ans:
+      This code defines a function called <span class="bg-green-300">quizTimer</span> that takes one parameter called dismiss.If the dismiss parameter is truthy  then the function will call the clearInterval method and pass it a variable called timer. This will stop the timer that was previously started with setInterval.
+    </p>
+    <h1 class="text-2xl font-bold">5. How Does the <span class="text-amber-500">chooseQuiz Function</span> works?</h1>
+    <p class="text-xl">Ans:
+      The <span class="bg-green-300">chooseQuiz</span> function is used to update the user's answer to a quiz. It does this by checking if the quiz has already been answered before, and if it has, it updates the answer in the answers array. If it has not been answered before, it adds a new answer object to the answers array. Finally, it updates the user interface to show the current answers.
+    </p>
+  </div>
+</body>
+
+<script>
+  document.getElementById("back-btn").addEventListener("click", function () {
+    window.location.href = "./index.html";
+  })
+</script>
+
+</html>
